@@ -1,27 +1,21 @@
 class Queens
-
   def initialize(position)
-      width = 8
-      height = 8
-      default_value = 0
+    width = 8
+    height = 8
+    default_value = 0
 
-      @board = Array.new(width){Array.new(height, default_value)}
+    @board = Array.new(width){Array.new(height, default_value)}
 
-      @w_row = position.values.first[0]
-      @w_column = position.values.first[1]
+    @w_row = position.values.first[0]
+    @w_column = position.values.first[1]
 
-      @b_row = position.values.last[0]
-      @b_column = position.values.last[1]
+    @b_row = position.values.last[0]
+    @b_column = position.values.last[1]
 
-      validate_position
+    validate_position
 
-      @board[@w_row][@w_column] = 'W'
-      @board[@b_row][@b_column] = 'B'
-
-
-      @board.each {|x| p x}
-
-
+    @board[@w_row][@w_column] = 'W'
+    @board[@b_row][@b_column] = 'B'
   end
   
   def validate_position
